@@ -1,6 +1,6 @@
 <?php
 
-namespace asinking\download\Report;
+namespace ak\download\Report;
 
 interface IReport
 {

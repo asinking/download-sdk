@@ -1,10 +1,10 @@
 <?php
 
-namespace asinking\download\Report;
+namespace ak\download\Report;
 
-use asinking\download\Constants\Constant;
-use asinking\download\Utils\CurlUtil;
-use asinking\download\Utils\SignUtil;
+use ak\download\Constants\Constant;
+use ak\download\Utils\CurlUtil;
+use ak\download\Utils\SignUtil;
 
 class AbstractReport implements IReport
 {

@@ -1,5 +1,5 @@
 {
-    "name": "asinking/download",
+    "name": "ak/download",
     "description": "this is download center",
     "type": "library",
     "license": "MIT",
@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "asinking\\download\\": "src/"
+            "ak\\download\\": "src/"
         }
     }
 }

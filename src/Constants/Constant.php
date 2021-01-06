@@ -1,6 +1,6 @@
 <?php
 
-namespace asinking\download\Constants;
+namespace ak\download\Constants;
 
 /**
  * 公共常量

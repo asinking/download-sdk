@@ -1,6 +1,6 @@
 <?php
 
-namespace asinking\download\Utils;
+namespace ak\download\Utils;
 
 class CurlUtil
 {
