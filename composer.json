@@ -14,7 +14,7 @@
     "repositories": {
         "packagist": {
             "type": "composer",
-            "url": "https://packagist.org"
+            "url": "http://106.55.12.47:6789/"
         }
     },
     "autoload": {
