@@ -1,6 +1,6 @@
-# 下载中心,SDK适用TP|Larvel|Lumen|Hyper等框架（遵循PSR-4协议）
+# 下载中心,遵循PSR-4协议）
 
-## 1、实现API服务类
+### 1.实现API服务类
 ```javascript 
 /**
  * 下载中心SDK对接
@@ -27,7 +27,7 @@ class TestReportService extends AbstractReport
 
 }
  ```
- ## 创建报表
+ ### 2.创建报表
 ```javascript 
     public function createReport()
     {
