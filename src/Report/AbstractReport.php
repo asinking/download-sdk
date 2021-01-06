@@ -27,31 +27,35 @@ class AbstractReport implements IReport
     /**
      * 创建报表任务
      * @param array $params
-     * @return mixed
+     * @return array
      */
     function createReport(array $params): array
     {
         $sign = SignUtil::calculateSign($params, $this->appSecret);
-        return CurlUtil::post($this->domain.Constant::URL_CREATE_REPORT,$params,array(
-            'Asink-Appid:'.$this->appId,
-            'Asink-Sign:'.$sign,
-            'Asink-Time:'.time(),
+        $result = CurlUtil::post($this->domain . Constant::URL_CREATE_REPORT, $params, array(
+            'Asink-Appid:' . $this->appId,
+            'Asink-Sign:' . $sign,
+            'Asink-Time:' . time(),
         ));
+        if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
+        return json_decode($result['content'], true);
     }
 
     /**
-     *获取报表数据列表
+     * 获取报表数据列表
      * @param array $params
-     * @return mixed
+     * @return array
      */
     function getReportDataList(array $params): array
     {
         $sign = SignUtil::calculatesSign($params, $this->appSecret);
-        return CurlUtil::get($this->domain.Constant::URL_CREATE_REPORT,$params,array(
-            'Asink-Appid:'.$this->appId,
-            'Asink-Sign:'.$sign,
-            'Asink-Time:'.time(),
+        $result = CurlUtil::get($this->domain . Constant::URL_CREATE_REPORT, $params, array(
+            'Asink-Appid:' . $this->appId,
+            'Asink-Sign:' . $sign,
+            'Asink-Time:' . time(),
         ));
+        if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
+        return json_decode($result['content'], true);
     }
 
     /**
