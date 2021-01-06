@@ -11,7 +11,7 @@ class CurlUtil
      * @param array $data
      * @param array $header
      * @param int $timeout
-     * @return bool|string
+     * @return array
      */
     public static function request(string $method, string $url, array $data = [], array $header = [], int $timeout = 60)
     {
@@ -24,7 +24,7 @@ class CurlUtil
      * @param array $data
      * @param array $header
      * @param int $timeout
-     * @return bool|string
+     * @return array
      */
     public static function get($url, $data = [], $header = [], $timeout = 60)
     {
@@ -45,14 +45,15 @@ class CurlUtil
         if (!empty($header)) {
             curl_setopt($curl, CURLOPT_HTTPHEADER, $header);//设置头部
         }
-        $content=curl_exec($curl);
-        $status=curl_getinfo($curl);
-        curl_close($curl);
+        $content = curl_exec($curl);
+        $status = curl_getinfo($curl);
 //        [$content, $status] = [curl_exec($curl), curl_getinfo($curl), curl_close($curl)];
         $bool = intval($status["http_code"]) === 200;
 //        if ($bool) LogUtil::info("api request [success]url:{{$url}}");
 //        else LogUtil::error("[GET]api request [fail]url:{{$url}},err:" . curl_error($curl) . ",content:{{$content}}");
-        return $bool ? $content : false;
+        $content = $bool ? $content : curl_error($curl);
+        curl_close($curl);
+        return ['code' => $bool, 'content' => $content];
     }
 
     /**
@@ -60,7 +61,7 @@ class CurlUtil
      * @param array $data
      * @param array $header
      * @param int $timeout
-     * @return bool|string
+     * @return array
      */
     public static function post($url, $data = [], $header = [], $timeout = 60)
     {
@@ -81,13 +82,14 @@ class CurlUtil
         //设置支持跳转
         curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
         curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-        $content=curl_exec($curl);
-        $status=curl_getinfo($curl);
-        curl_close($curl);
+        $content = curl_exec($curl);
+        $status = curl_getinfo($curl);
 //        [$content, $status] = [curl_exec($curl), curl_getinfo($curl), curl_close($curl)];
         $bool = intval($status["http_code"]) === 200;
 //        if ($bool) LogUtil::info("api request [success]url:{{$url}}");
 //        else LogUtil::error("[POST]api request [fail]url:{{$url}},err:" . curl_error($curl) . ",content:{{$content}}");
-        return $bool ? $content : false;
+        $content = $bool ? $content : curl_error($curl);
+        curl_close($curl);
+        return ['code' => $bool, 'content' => $content];
     }
 }
