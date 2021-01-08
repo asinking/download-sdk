@@ -44,7 +44,7 @@
    
  ### 3.创建定时报表任务
 ```javascript 
-            public function createTimerReport()
+   public function createTimerReport()
             {
                 $param = [
                     'env_mark' => 'local', 'zid' => 1, 'uid' => 1,
@@ -58,8 +58,8 @@
             }
 ```
 ### 4.编辑定时报表任务
-  ```javascript 
-       public function editTimerReport()
+```javascript 
+ public function editTimerReport()
            {
                $param = [
                    'env_mark' => 'local', 'zid' => 1, 'uid' => 1,
@@ -78,5 +78,5 @@
                $data = $this->_testReportService->editTimerReport($param);
                return $this->success($data);
            }
-```  ```
+```
 
