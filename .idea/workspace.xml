@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d1d2821-0269-4398-8073-9a323db63ede" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Constants/ReportExecCycle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Constants/Constant.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Constants/Constant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Report/AbstractReport.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Report/AbstractReport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Report/IReport.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Report/IReport.php" afterDir="false" />
-    </list>
+    <list default="true" id="3d1d2821-0269-4398-8073-9a323db63ede" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,20 +36,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Report/AbstractReport.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="759">
-              <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
+            <state relative-caret-position="943">
+              <caret line="85" column="83" selection-start-line="85" selection-start-column="83" selection-end-line="85" selection-end-column="83" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Utils/SignUtil.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+            <state relative-caret-position="299">
+              <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -110,8 +105,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1859" />
-    <option name="y" value="30" />
+    <option name="x" value="-2115" />
+    <option name="y" value="37" />
     <option name="width" value="1920" />
     <option name="height" value="1040" />
   </component>
@@ -200,15 +195,15 @@
       <workItem from="1609899420658" duration="4017000" />
       <workItem from="1609915318511" duration="3064000" />
       <workItem from="1609930167616" duration="12000" />
-      <workItem from="1610101296379" duration="109000" />
+      <workItem from="1610101296379" duration="720000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7202000" />
+    <option name="totallyTimeSpent" value="7813000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1859" y="30" width="1920" height="1040" extended-state="0" />
+    <frame x="-2115" y="37" width="1920" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10967742" />
@@ -247,20 +242,6 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/SignUtil.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/CurlUtil.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="805">
-          <caret line="95" selection-start-line="95" selection-end-line="95" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Constants/ReportExecCycle.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -284,8 +265,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Report/AbstractReport.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
-          <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
+        <state relative-caret-position="943">
+          <caret line="85" column="83" selection-start-line="85" selection-start-column="83" selection-end-line="85" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/CurlUtil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="805">
+          <caret line="95" selection-start-line="95" selection-end-line="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/SignUtil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
         </state>
       </provider>
     </entry>
