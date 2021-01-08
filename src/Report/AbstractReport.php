@@ -42,13 +42,30 @@ class AbstractReport implements IReport
     }
 
     /**
+     * 创建定时报表任务
+     * @param array $params
+     * @return array
+     */
+    function createTimerReport(array $params): array
+    {
+        $sign = SignUtil::calculateSign($params, $this->appSecret);
+        $result = CurlUtil::post($this->domain . Constant::URL_CREATE_TIMER_REPORT, $params, array(
+            'Asink-Appid:' . $this->appId,
+            'Asink-Sign:' . $sign,
+            'Asink-Time:' . time(),
+        ));
+        if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
+        return json_decode($result['content'], true);
+    }
+
+    /**
      * 获取报表数据列表
      * @param array $params
      * @return array
      */
     function getReportDataList(array $params): array
     {
-        $sign = SignUtil::calculatesSign($params, $this->appSecret);
+        $sign = SignUtil::calculateSign($params, $this->appSecret);
         $result = CurlUtil::get($this->domain . Constant::URL_CREATE_REPORT, $params, array(
             'Asink-Appid:' . $this->appId,
             'Asink-Sign:' . $sign,
@@ -65,6 +82,13 @@ class AbstractReport implements IReport
      */
     function editTimerReport(array $params): array
     {
-        // TODO: Implement editTimerReport() method.
+        $sign = SignUtil::calculateSign($params, $this->appSecret);
+        $result = CurlUtil::post($this->domain . Constant::URL_EDIT_TIMER_REPORT, $params, array(
+            'Asink-Appid:' . $this->appId,
+            'Asink-Sign:' . $sign,
+            'Asink-Time:' . time(),
+        ));
+        if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
+        return json_decode($result['content'], true);
     }
 }

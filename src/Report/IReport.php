@@ -12,6 +12,13 @@ interface IReport
     function createReport(array $params): array;
 
     /**
+     * 创建定时报表任务
+     * @param array $params
+     * @return array
+     */
+    function createTimerReport(array $params): array;
+
+    /**
      *获取报表数据列表
      * @param array $params
      * @return mixed
