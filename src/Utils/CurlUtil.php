@@ -5,6 +5,30 @@ namespace ak\download\Utils;
 class CurlUtil
 {
     /**
+     * API请求，带接口鉴权
+     * @param string $method
+     * @param string $appId
+     * @param string $appSecret
+     * @param string $url
+     * @param array $data
+     * @param int $timeout
+     * @return array
+     */
+    public static function requestSign(string $method, string $appId, string $appSecret, string $url, array $data = [], int $timeout = 60)
+    {
+        $sign = SignUtil::calculateSign($data, $appSecret);
+        $headers = array(
+            'Asink-Appid:' . $appId,
+            'Asink-Sign:' . $sign,
+            'Asink-Time:' . time(),
+        );
+        if ($method == "POST") $result = self::post($url, $data, $headers, $timeout);
+        else $result = self::get($url, $data, $headers, $timeout);
+        if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
+        return json_decode($result['content'], true);
+    }
+
+    /**
      * API接口请求
      * @param string $method
      * @param string $url
