@@ -32,4 +32,31 @@ interface IReport
      */
     function editTimerReport(array $params): array;
 
+    /**
+     * 订阅报表状态【当有新建报表任务时，会下发通知】
+     * @param array $params
+     * @return array
+     */
+    function subscribe(array $params): array;
+
+    /**
+     * 取消订阅报表状态
+     * @param array $params
+     * @return array
+     */
+    function unSubscribe(array $params): array;
+
+    /**
+     * 重试报表导出
+     * @param array $params
+     * @return array
+     */
+    function retryReportExport(array $params): array;
+
+    /**
+     * 获取条件分组列表
+     * @param array $params
+     * @return array
+     */
+    function getConditionGroupList(array $params): array;
 }

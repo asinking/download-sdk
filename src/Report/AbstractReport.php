@@ -91,4 +91,59 @@ class AbstractReport implements IReport
         if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
         return json_decode($result['content'], true);
     }
+
+    /**
+     * 订阅报表状态
+     * @param array $params
+     * @return array
+     */
+    function subscribe(array $params): array
+    {
+        $sign = SignUtil::calculateSign($params, $this->appSecret);
+        $result = CurlUtil::post($this->domain . Constant::URL_REPORT_SUBSCRIBE, $params, array(
+            'Asink-Appid:' . $this->appId,
+            'Asink-Sign:' . $sign,
+            'Asink-Time:' . time(),
+        ));
+        if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
+        return json_decode($result['content'], true);
+    }
+
+    /**
+     * 取消订阅报表状态
+     * @param array $params
+     * @return array
+     */
+    function unSubscribe(array $params): array
+    {
+        $sign = SignUtil::calculateSign($params, $this->appSecret);
+        $result = CurlUtil::post($this->domain . Constant::URL_REPORT_UNSUBSCRIBE, $params, array(
+            'Asink-Appid:' . $this->appId,
+            'Asink-Sign:' . $sign,
+            'Asink-Time:' . time(),
+        ));
+        if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
+        return json_decode($result['content'], true);
+    }
+
+    /**
+     * 重试报表导出
+     * @param array $params
+     * @return array
+     */
+    function retryReportExport(array $params): array
+    {
+        return ['code' => -1, 'msg' => 'no support'];
+    }
+
+    /**
+     * 获取条件分组列表
+     * @param array $params
+     * @return array
+     */
+    function getConditionGroupList(array $params): array
+    {
+        return ['code' => -1, 'msg' => 'no support'];
+    }
+
 }
