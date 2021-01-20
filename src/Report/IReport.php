@@ -54,6 +54,13 @@ interface IReport
     function retryReportExport(array $params): array;
 
     /**
+     * 删除报表操作
+     * @param array $params
+     * @return array
+     */
+    function delReport(array $params): array;
+
+    /**
      * 获取条件分组列表
      * @param array $params
      * @return array

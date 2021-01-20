@@ -133,17 +133,47 @@ class AbstractReport implements IReport
      */
     function retryReportExport(array $params): array
     {
-        return ['code' => -1, 'msg' => 'no support'];
+        $sign = SignUtil::calculateSign($params, $this->appSecret);
+        $result = CurlUtil::post($this->domain . Constant::URL_RETRY_REPORT, $params, array(
+            'Asink-Appid:' . $this->appId,
+            'Asink-Sign:' . $sign,
+            'Asink-Time:' . time(),
+        ));
+        if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
+        return json_decode($result['content'], true);
     }
 
     /**
-     * 获取条件分组列表
+     * 删除报表
+     * @param array $params
+     * @return array
+     */
+    function delReport(array $params): array
+    {
+        $sign = SignUtil::calculateSign($params, $this->appSecret);
+        $result = CurlUtil::post($this->domain . Constant::URL_DEL_REPORT, $params, array(
+            'Asink-Appid:' . $this->appId,
+            'Asink-Sign:' . $sign,
+            'Asink-Time:' . time(),
+        ));
+        if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
+        return json_decode($result['content'], true);
+    }
+    /**
+     * 获取分组查询条件
      * @param array $params
      * @return array
      */
     function getConditionGroupList(array $params): array
     {
-        return ['code' => -1, 'msg' => 'no support'];
+        $sign = SignUtil::calculateSign($params, $this->appSecret);
+        $result = CurlUtil::post($this->domain . Constant::URL_GET_CONDITIONGROUP, $params, array(
+            'Asink-Appid:' . $this->appId,
+            'Asink-Sign:' . $sign,
+            'Asink-Time:' . time(),
+        ));
+        if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
+        return json_decode($result['content'], true);
     }
 
 }

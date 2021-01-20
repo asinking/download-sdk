@@ -5,7 +5,7 @@ namespace ak\download\Constants;
 /**
  * 公共常量
  * Class Constant
- * @package asinking\download\Constants
+ * @package ak\download\Constants
  */
 class Constant
 {
@@ -21,10 +21,29 @@ class Constant
      * 编辑定时报表任务
      */
     const URL_EDIT_TIMER_REPORT = '/v1/report/editTimerReport';
+    /**
+     * 重试导出报表
+     */
+    const URL_RETRY_REPORT = '/v1/report/retryReportExport';
+    /**
+     * 删除报表
+     */
+    const URL_DEL_REPORT = '/v1/report/delReport';
+    /**
+     * 获取分组查询条件
+     */
+    const URL_GET_CONDITIONGROUP = '/v1/report/getConditionGroup';
 
     /**
      * 获取报告列表
      */
     const URL_GET_REPORT_DATA_LIST = '/v1/report/getReportDataList';
-
+    /**
+     * 订阅报表状态
+     */
+    const URL_REPORT_SUBSCRIBE = '/v1/subscribe/subscribe';
+    /**
+     * 取消报表订阅
+     */
+    const URL_REPORT_UNSUBSCRIBE = '/v1/subscribe/unSubscribe';
 }
