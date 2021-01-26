@@ -23,6 +23,16 @@ class AbstractReport implements IReport
      * @var string
      */
     public $appSecret = '676af546fe80e75b399b00aff8a018a6';
+    /**
+     * 连接超时时间
+     * @var int
+     */
+    public $connect_timeout = 10;
+    /**
+     * 接收缓冲数据等待时间
+     * @var int
+     */
+    public $curlopt_timeout = 60;
 
     /**
      * 创建报表任务
@@ -36,7 +46,7 @@ class AbstractReport implements IReport
             'Asink-Appid:' . $this->appId,
             'Asink-Sign:' . $sign,
             'Asink-Time:' . time(),
-        ));
+        ), $this->connect_timeout, $this->curlopt_timeout);
         if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
         return json_decode($result['content'], true);
     }
@@ -53,7 +63,7 @@ class AbstractReport implements IReport
             'Asink-Appid:' . $this->appId,
             'Asink-Sign:' . $sign,
             'Asink-Time:' . time(),
-        ));
+        ), $this->connect_timeout, $this->curlopt_timeout);
         if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
         return json_decode($result['content'], true);
     }
@@ -70,7 +80,7 @@ class AbstractReport implements IReport
             'Asink-Appid:' . $this->appId,
             'Asink-Sign:' . $sign,
             'Asink-Time:' . time(),
-        ));
+        ), $this->connect_timeout, $this->curlopt_timeout);
         if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
         return json_decode($result['content'], true);
     }
@@ -87,7 +97,7 @@ class AbstractReport implements IReport
             'Asink-Appid:' . $this->appId,
             'Asink-Sign:' . $sign,
             'Asink-Time:' . time(),
-        ));
+        ), $this->connect_timeout, $this->curlopt_timeout);
         if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
         return json_decode($result['content'], true);
     }
@@ -104,7 +114,7 @@ class AbstractReport implements IReport
             'Asink-Appid:' . $this->appId,
             'Asink-Sign:' . $sign,
             'Asink-Time:' . time(),
-        ));
+        ), $this->connect_timeout, $this->curlopt_timeout);
         if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
         return json_decode($result['content'], true);
     }
@@ -121,7 +131,7 @@ class AbstractReport implements IReport
             'Asink-Appid:' . $this->appId,
             'Asink-Sign:' . $sign,
             'Asink-Time:' . time(),
-        ));
+        ), $this->connect_timeout, $this->curlopt_timeout);
         if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
         return json_decode($result['content'], true);
     }
@@ -138,7 +148,7 @@ class AbstractReport implements IReport
             'Asink-Appid:' . $this->appId,
             'Asink-Sign:' . $sign,
             'Asink-Time:' . time(),
-        ));
+        ), $this->connect_timeout, $this->curlopt_timeout);
         if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
         return json_decode($result['content'], true);
     }
@@ -155,10 +165,11 @@ class AbstractReport implements IReport
             'Asink-Appid:' . $this->appId,
             'Asink-Sign:' . $sign,
             'Asink-Time:' . time(),
-        ));
+        ), $this->connect_timeout, $this->curlopt_timeout);
         if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
         return json_decode($result['content'], true);
     }
+
     /**
      * 获取分组查询条件
      * @param array $params
@@ -171,7 +182,7 @@ class AbstractReport implements IReport
             'Asink-Appid:' . $this->appId,
             'Asink-Sign:' . $sign,
             'Asink-Time:' . time(),
-        ));
+        ), $this->connect_timeout, $this->curlopt_timeout);
         if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
         return json_decode($result['content'], true);
     }
