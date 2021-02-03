@@ -78,7 +78,7 @@ class CurlUtil
         $bool = intval($status["http_code"]) === 200;
 //        if ($bool) LogUtil::info("api request [success]url:{{$url}}");
 //        else LogUtil::error("[GET]api request [fail]url:{{$url}},err:" . curl_error($curl) . ",content:{{$content}}");
-        $content = $bool ? $content : curl_error($curl);
+        $content = $bool ? $content : curl_error($curl). "[get][url]$url";
         curl_close($curl);
         return ['code' => $bool, 'content' => $content];
     }
@@ -116,7 +116,7 @@ class CurlUtil
         $bool = intval($status["http_code"]) === 200;
 //        if ($bool) LogUtil::info("api request [success]url:{{$url}}");
 //        else LogUtil::error("[POST]api request [fail]url:{{$url}},err:" . curl_error($curl) . ",content:{{$content}}");
-        $content = $bool ? $content : curl_error($curl);
+        $content = $bool ? $content : curl_error($curl). "[post][url]$url";
         curl_close($curl);
         return ['code' => $bool, 'content' => $content];
     }
