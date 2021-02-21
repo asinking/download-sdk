@@ -30,14 +30,15 @@ class Constant
      */
     const URL_DEL_REPORT = '/v1/report/delReport';
     /**
-     * 获取分组查询条件
+     * 获取所有报表任务分组
      */
-    const URL_GET_CONDITIONGROUP = '/v1/report/getConditionGroup';
+    const URL_GET_ALL_TASKGROUP = '/v1/report/getAllTaskGroup';
 
     /**
      * 获取报告列表
      */
     const URL_GET_REPORT_DATA_LIST = '/v1/report/getReportDataList';
+
     /**
      * 订阅报表状态
      */

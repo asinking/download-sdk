@@ -61,9 +61,9 @@ interface IReport
     function delReport(array $params): array;
 
     /**
-     * 获取条件分组列表
+     * 获取所有报表任务分组
      * @param array $params
      * @return array
      */
-    function getConditionGroupList(array $params): array;
+    function getAllTaskGroup(array $params): array;
 }

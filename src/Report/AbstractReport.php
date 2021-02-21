@@ -175,10 +175,10 @@ class AbstractReport implements IReport
      * @param array $params
      * @return array
      */
-    function getConditionGroupList(array $params): array
+    function getAllTaskGroup(array $params): array
     {
         $sign = SignUtil::calculateSign($params, $this->appSecret);
-        $result = CurlUtil::post($this->domain . Constant::URL_GET_CONDITIONGROUP, $params, array(
+        $result = CurlUtil::post($this->domain . Constant::URL_GET_ALL_TASKGROUP, $params, array(
             'Asink-Appid:' . $this->appId,
             'Asink-Sign:' . $sign,
             'Asink-Time:' . time(),
