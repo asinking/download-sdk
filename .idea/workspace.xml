@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3d1d2821-0269-4398-8073-9a323db63ede" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/SignUtil.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/SignUtil.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +28,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../download_center" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -59,11 +58,17 @@
       <workItem from="1611110492514" duration="2296000" />
       <workItem from="1611643835998" duration="155000" />
       <workItem from="1612326029660" duration="35000" />
-      <workItem from="1613809268763" duration="684000" />
+      <workItem from="1613809268763" duration="2018000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="748" y="292" key="FileChooserDialogImpl" timestamp="1613822824894">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="748" y="292" key="FileChooserDialogImpl/0.0.1920.1040/1920.9.1920.1040@0.0.1920.1040" timestamp="1613822824894" />
   </component>
 </project>
