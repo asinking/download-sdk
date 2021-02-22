@@ -41,11 +41,12 @@ class AbstractReport implements IReport
      */
     function createReport(array $params): array
     {
-        $sign = SignUtil::calculateSign($params, $this->appSecret);
+        $timestamp= time();
+        $sign = SignUtil::calculateSign($params, $this->appId, $this->appSecret,$timestamp);
         $result = CurlUtil::post($this->domain . Constant::URL_CREATE_REPORT, $params, array(
             'Asink-Appid:' . $this->appId,
             'Asink-Sign:' . $sign,
-            'Asink-Time:' . time(),
+            'Asink-Time:' . $timestamp,
         ), $this->connect_timeout, $this->curlopt_timeout);
         if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
         return json_decode($result['content'], true);
@@ -58,11 +59,12 @@ class AbstractReport implements IReport
      */
     function createTimerReport(array $params): array
     {
-        $sign = SignUtil::calculateSign($params, $this->appSecret);
+        $timestamp= time();
+        $sign = SignUtil::calculateSign($params, $this->appId, $this->appSecret,$timestamp);
         $result = CurlUtil::post($this->domain . Constant::URL_CREATE_TIMER_REPORT, $params, array(
             'Asink-Appid:' . $this->appId,
             'Asink-Sign:' . $sign,
-            'Asink-Time:' . time(),
+            'Asink-Time:' . $timestamp,
         ), $this->connect_timeout, $this->curlopt_timeout);
         if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
         return json_decode($result['content'], true);
@@ -75,11 +77,12 @@ class AbstractReport implements IReport
      */
     function getReportDataList(array $params): array
     {
-        $sign = SignUtil::calculateSign($params, $this->appSecret);
+        $timestamp= time();
+        $sign = SignUtil::calculateSign($params, $this->appId, $this->appSecret,$timestamp);
         $result = CurlUtil::get($this->domain . Constant::URL_CREATE_REPORT, $params, array(
             'Asink-Appid:' . $this->appId,
             'Asink-Sign:' . $sign,
-            'Asink-Time:' . time(),
+            'Asink-Time:' . $timestamp,
         ), $this->connect_timeout, $this->curlopt_timeout);
         if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
         return json_decode($result['content'], true);
@@ -92,11 +95,12 @@ class AbstractReport implements IReport
      */
     function editTimerReport(array $params): array
     {
-        $sign = SignUtil::calculateSign($params, $this->appSecret);
+        $timestamp= time();
+        $sign = SignUtil::calculateSign($params, $this->appId, $this->appSecret,$timestamp);
         $result = CurlUtil::post($this->domain . Constant::URL_EDIT_TIMER_REPORT, $params, array(
             'Asink-Appid:' . $this->appId,
             'Asink-Sign:' . $sign,
-            'Asink-Time:' . time(),
+            'Asink-Time:' . $timestamp,
         ), $this->connect_timeout, $this->curlopt_timeout);
         if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
         return json_decode($result['content'], true);
@@ -109,11 +113,12 @@ class AbstractReport implements IReport
      */
     function subscribe(array $params): array
     {
-        $sign = SignUtil::calculateSign($params, $this->appSecret);
+        $timestamp= time();
+        $sign = SignUtil::calculateSign($params, $this->appId, $this->appSecret,$timestamp);
         $result = CurlUtil::post($this->domain . Constant::URL_REPORT_SUBSCRIBE, $params, array(
             'Asink-Appid:' . $this->appId,
             'Asink-Sign:' . $sign,
-            'Asink-Time:' . time(),
+            'Asink-Time:' . $timestamp,
         ), $this->connect_timeout, $this->curlopt_timeout);
         if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
         return json_decode($result['content'], true);
@@ -126,11 +131,12 @@ class AbstractReport implements IReport
      */
     function unSubscribe(array $params): array
     {
-        $sign = SignUtil::calculateSign($params, $this->appSecret);
+        $timestamp= time();
+        $sign = SignUtil::calculateSign($params, $this->appId, $this->appSecret,$timestamp);
         $result = CurlUtil::post($this->domain . Constant::URL_REPORT_UNSUBSCRIBE, $params, array(
             'Asink-Appid:' . $this->appId,
             'Asink-Sign:' . $sign,
-            'Asink-Time:' . time(),
+            'Asink-Time:' .$timestamp,
         ), $this->connect_timeout, $this->curlopt_timeout);
         if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
         return json_decode($result['content'], true);
@@ -143,11 +149,12 @@ class AbstractReport implements IReport
      */
     function retryReportExport(array $params): array
     {
-        $sign = SignUtil::calculateSign($params, $this->appSecret);
+        $timestamp= time();
+        $sign = SignUtil::calculateSign($params, $this->appId, $this->appSecret,$timestamp);
         $result = CurlUtil::post($this->domain . Constant::URL_RETRY_REPORT, $params, array(
             'Asink-Appid:' . $this->appId,
             'Asink-Sign:' . $sign,
-            'Asink-Time:' . time(),
+            'Asink-Time:' . $timestamp
         ), $this->connect_timeout, $this->curlopt_timeout);
         if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
         return json_decode($result['content'], true);
@@ -160,11 +167,12 @@ class AbstractReport implements IReport
      */
     function delReport(array $params): array
     {
-        $sign = SignUtil::calculateSign($params, $this->appSecret);
+        $timestamp= time();
+        $sign = SignUtil::calculateSign($params, $this->appId, $this->appSecret,$timestamp);
         $result = CurlUtil::post($this->domain . Constant::URL_DEL_REPORT, $params, array(
             'Asink-Appid:' . $this->appId,
             'Asink-Sign:' . $sign,
-            'Asink-Time:' . time(),
+            'Asink-Time:' .$timestamp,
         ), $this->connect_timeout, $this->curlopt_timeout);
         if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
         return json_decode($result['content'], true);
@@ -177,11 +185,12 @@ class AbstractReport implements IReport
      */
     function getAllTaskGroup(array $params): array
     {
-        $sign = SignUtil::calculateSign($params, $this->appSecret);
+        $timestamp= time();
+        $sign = SignUtil::calculateSign($params, $this->appId, $this->appSecret,$timestamp);
         $result = CurlUtil::post($this->domain . Constant::URL_GET_ALL_TASKGROUP, $params, array(
             'Asink-Appid:' . $this->appId,
             'Asink-Sign:' . $sign,
-            'Asink-Time:' . time(),
+            'Asink-Time:' .$timestamp
         ), $this->connect_timeout, $this->curlopt_timeout);
         if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
         return json_decode($result['content'], true);

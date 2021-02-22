@@ -6,7 +6,6 @@ namespace ak\download\Constants;
  */
 class ErrorCode
 {
-   #
     /**
      * @Message("无效签名")
      */
@@ -16,11 +15,10 @@ class ErrorCode
      */
     const SIGN_EXPIRE = 20002;
 
-
     /** @var string[] 错误码对应消息映射 */
     protected static $errorMsgAlias = [
-        self::SERVER_ERROR => '啊哦，服务器开小差了~~',
-        self::SIGN_ERROR => 'nonce undefined',
+        self::SIGN_INVALID_ERROR => '无效签名',
+        self::SIGN_EXPIRE => '签名已过期或失效',
     ];
 
     /**

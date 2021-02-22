@@ -11,6 +11,7 @@
     ],
     "minimum-stability": "stable",
     "require": {
+        "ak/sign-encrypt": "^1.0"
     },
     "repositories": {
         "packagist": {
