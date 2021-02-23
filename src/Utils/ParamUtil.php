@@ -21,10 +21,13 @@ class ParamUtil
     /**
      * 数据解压
      * @param string $params
-     * @return array
+     * @return mixed
+     * @throws \Exception
      */
     public static function data2unCompress(string $params)
     {
-        return json_decode(gzdecode($params), true);
+        $result = json_decode(gzdecode($params), true);
+        if (!$result) throw new \Exception("数据格式错误，解压失败!");
+        return $result;
     }
 }
