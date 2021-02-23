@@ -25,7 +25,7 @@ class SignUtil
          $signSignTimestamp = str_pad(CommonUtil::decb64($params['sign_timestamp']), 6, "0", STR_PAD_LEFT);
          return strtoupper($string) . $signSignTimestamp;*/
         //引入公共签名
-        return \Ak\Encrypt\Facades\AkEncrypt::generateSign($params, $secretKey, $appid, $timestamp);
+        return \Ak\Encrypt\Facades\AkEncrypt::generateSign($params, $appid, $secretKey,$timestamp);
     }
 
     /**
