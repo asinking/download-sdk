@@ -35,10 +35,11 @@ class SignUtil
      * @param string $secretKey
      * @param int $timestamp
      * @param string $compSign
+     * @param int $expireTime
      * @return bool
      * @throws \Ak\Encrypt\Exceptions\AkEncryptException
      */
-    public static function verifySign(array $params, string $appid, string $secretKey, int $timestamp, string $compSign)
+    public static function verifySign(array $params, string $appid, string $secretKey, int $timestamp, string $compSign,int $expireTime=600)
     {
         /*f (empty($compSign) || strlen($compSign) <= 6) throw new SignException(null, ErrorCode::INVALID_SIGN_ERROR);
          $timeStamp = CommonUtil::b64dec(substr($compSign, -6));
@@ -46,6 +47,6 @@ class SignUtil
          if (!isset($params['sign_timestamp'])) $params['sign_timestamp'] = $timeStamp;
          $correctSign = self::calculateSign($params, $secret_key);
          return $correctSign == $compSign;*/
-        return \Ak\Encrypt\Facades\AkEncrypt::validateSign($params, $appid, $secretKey, $timestamp, $compSign, 60);
+        return \Ak\Encrypt\Facades\AkEncrypt::validateSign($params, $appid, $secretKey, $timestamp, $compSign, $expireTime);
     }
 }
