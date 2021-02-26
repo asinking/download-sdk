@@ -162,10 +162,16 @@
  ```
  ### 6.获取所有分组任务
  ```javascript 
-         public function getAllTaskGroup()
-            {
-                $data = $this->_testReportService->getConditionGroupList([]);
-                return $this->success($data);
-            }
+public function getReportData()
+    {
+        $params=[
+            'company_id'=>1,'uid'=>489,
+            'report_type'=>0,
+            'start_time'=>'2021-02-23','end_time'=>'2021-02-26',
+            'keyword'=>'9'
+        ];
+        $data = $this->_testReportService->getReportData($params);
+        return $this->success($data);
+    }
  ```
 
