@@ -23,7 +23,7 @@ interface IReport
      * @param array $params
      * @return mixed
      */
-    function getReportDataList(array $params): array;
+    function getReportData(array $params): array;
 
     /**
      * 编辑定时报表任务
@@ -61,9 +61,9 @@ interface IReport
     function delReport(array $params): array;
 
     /**
-     * 获取所有报表任务分组
+     * 获取报告任务分组
      * @param array $params
      * @return array
      */
-    function getAllTaskGroup(array $params): array;
+    function getReportTaskGroup(array $params): array;
 }

@@ -75,11 +75,11 @@ class AbstractReport implements IReport
      * @param array $params
      * @return array
      */
-    function getReportDataList(array $params): array
+    function getReportData(array $params): array
     {
         $timestamp= time();
         $sign = SignUtil::calculateSign($params, $this->appId, $this->appSecret,$timestamp);
-        $result = CurlUtil::get($this->domain . Constant::URL_CREATE_REPORT, $params, array(
+        $result = CurlUtil::post($this->domain . Constant::URL_GET_REPORT_DATA, $params, array(
             'Asink-Appid:' . $this->appId,
             'Asink-Sign:' . $sign,
             'Asink-Time:' . $timestamp,
@@ -183,11 +183,11 @@ class AbstractReport implements IReport
      * @param array $params
      * @return array
      */
-    function getAllTaskGroup(array $params): array
+    function getReportTaskGroup(array $params): array
     {
         $timestamp= time();
         $sign = SignUtil::calculateSign($params, $this->appId, $this->appSecret,$timestamp);
-        $result = CurlUtil::post($this->domain . Constant::URL_GET_ALL_TASKGROUP, $params, array(
+        $result = CurlUtil::post($this->domain . Constant::URL_GET_REPORT_TASK_GROUP, $params, array(
             'Asink-Appid:' . $this->appId,
             'Asink-Sign:' . $sign,
             'Asink-Time:' .$timestamp
