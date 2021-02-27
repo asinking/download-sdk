@@ -26,11 +26,17 @@ interface IReport
     function getReportData(array $params): array;
 
     /**
+     * 获取定时任务报告
+     * @return array
+     */
+    function getTimerTaskReport(array $params): array;
+
+    /**
      * 编辑定时报表任务
      * @param array $params
      * @return mixed
      */
-    function editTimerReport(array $params): array;
+    function editTimerTaskReport(array $params): array;
 
     /**
      * 订阅报表状态【当有新建报表任务时，会下发通知】

@@ -20,6 +20,11 @@ class Constant
     const URL_CREATE_TIMER_REPORT = '/v1/report/createTimerReport';
 
     /**
+     * 获取定时任务报告
+     */
+    const URL_GET_TIMER_TASK_REPORT = '/v1/report/getTimerTaskReport';
+
+    /**
      * 编辑定时报表任务
      */
     const URL_EDIT_TIMER_REPORT = '/v1/report/editTimerReport';

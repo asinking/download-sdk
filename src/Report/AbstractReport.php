@@ -89,11 +89,29 @@ class AbstractReport implements IReport
     }
 
     /**
+     * 获取定时任务报告
+     * @param array $params
+     * @return mixed
+     */
+    function getTimerTaskReport(array $params): array
+    {
+        $timestamp= time();
+        $sign = SignUtil::calculateSign($params, $this->appId, $this->appSecret,$timestamp);
+        $result = CurlUtil::post($this->domain . Constant::URL_GET_TIMER_TASK_REPORT, $params, array(
+            'Asink-Appid:' . $this->appId,
+            'Asink-Sign:' . $sign,
+            'Asink-Time:' . $timestamp,
+        ), $this->connect_timeout, $this->curlopt_timeout);
+        if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
+        return json_decode($result['content'], true);
+    }
+
+    /**
      * 编辑定时报表任务
      * @param array $params
      * @return mixed
      */
-    function editTimerReport(array $params): array
+    function editTimerTaskReport(array $params): array
     {
         $timestamp= time();
         $sign = SignUtil::calculateSign($params, $this->appId, $this->appSecret,$timestamp);
@@ -195,5 +213,6 @@ class AbstractReport implements IReport
         if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
         return json_decode($result['content'], true);
     }
+
 
 }
