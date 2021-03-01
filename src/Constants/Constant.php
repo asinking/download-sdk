@@ -50,6 +50,11 @@ class Constant
     const URL_GET_REPORT_DATA = '/v1/report/getReportData';
 
     /**
+     * 报告资源路径获取
+     */
+    const URL_REPORT_DOWNLOAD_RESOURCE = '/v1/report/downloadResource';
+
+    /**
      * 订阅报表状态
      */
     const URL_REPORT_SUBSCRIBE = '/v1/subscribe/subscribe';
@@ -57,4 +62,5 @@ class Constant
      * 取消报表订阅
      */
     const URL_REPORT_UNSUBSCRIBE = '/v1/subscribe/unSubscribe';
+
 }

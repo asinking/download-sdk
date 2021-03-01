@@ -214,5 +214,21 @@ class AbstractReport implements IReport
         return json_decode($result['content'], true);
     }
 
-
+    /**
+     * 获取报告签名URL下载资源
+     * @param array $params
+     * @return array
+     */
+    function downloadResource(array $params): array
+    {
+        $timestamp= time();
+        $sign = SignUtil::calculateSign($params, $this->appId, $this->appSecret,$timestamp);
+        $result = CurlUtil::post($this->domain . Constant::URL_REPORT_DOWNLOAD_RESOURCE, $params, array(
+            'Asink-Appid:' . $this->appId,
+            'Asink-Sign:' . $sign,
+            'Asink-Time:' .$timestamp
+        ), $this->connect_timeout, $this->curlopt_timeout);
+        if (!$result['code']) return ['code' => -1, 'msg' => $result['content']];
+        return json_decode($result['content'], true);
+    }
 }

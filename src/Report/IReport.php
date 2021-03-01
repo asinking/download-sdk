@@ -72,4 +72,11 @@ interface IReport
      * @return array
      */
     function getReportTaskGroup(array $params): array;
+
+    /**
+     * 获取下载资源
+     * @param array $params
+     * @return array
+     */
+    function downloadResource(array $params): array;
 }

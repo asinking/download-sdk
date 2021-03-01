@@ -64,7 +64,7 @@ class CurlUtil
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($curl, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 1);              // 从证书中检查SSL加密算法是否存在
+//        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 1);              // 从证书中检查SSL加密算法是否存在
         curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
         curl_setopt($curl, CURLOPT_TIMEOUT, $curlopt_timeout);
         curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, $connect_timeout);
