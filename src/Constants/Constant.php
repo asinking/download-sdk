@@ -27,7 +27,7 @@ class Constant
     /**
      * 编辑定时报表任务
      */
-    const URL_EDIT_TIMER_REPORT = '/v1/report/editTimerReport';
+    const URL_EDIT_TIMER_REPORT = '/v1/report/editTimerTaskReport';
 
     /**
      * 重试导出报表
